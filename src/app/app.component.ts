@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Produto } from './models/produto.model';
-import { Estilo } from './models/estilo.model';
+
 
 @Component({
   selector: 'app-root',
@@ -36,11 +36,8 @@ export class AppComponent implements OnInit {
     const estilo = {
       id: documentoEstilo.id,
       ...documentoEstilo.data()
-    } as Estilo;
 
-    console.log('Nome do produto: ' + produto.nome);
-    console.log('Descrição do estilo: ' + estilo.descricao);
+}
 
   }
-
 }

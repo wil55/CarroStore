@@ -6,9 +6,9 @@
       <div mat-card-avatar class="avatar" fxLayout fxLayoutAlign="center center">
         <mat-icon>palette</mat-icon>
       </div>
-
-      <mat-card-title>Carros</mat-card-title>
-      <mat-card-subtitle>Cadastro de um novo Carro</mat-card-subtitle>
+      
+      <mat-card-title>Marca</mat-card-title>
+      <mat-card-subtitle>Cadastro de uma nova marca</mat-card-subtitle>
 
     </mat-card-header>
 
@@ -26,21 +26,21 @@
 
       <div fxLayout="row">
 
-        <button mat-button color="accent" class="uppercase" type="button">
+        <button mat-button color="accent" class="uppercase" type="button" [disabled]="formulario.disabled">
           Voltar
         </button>
 
-        <button mat-button color="accent" class="uppercase" type="reset">
+        <button mat-button color="accent" class="uppercase" type="reset" [disabled]="formulario.disabled">
           Limpar
         </button>
 
         <span fxFlex></span>
 
-        <!-- <div class="spinner-container" *ngIf="formulario.disabled">
+        <div class="spinner-container" *ngIf="formulario.disabled">
           <mat-spinner strokeWidth="2" diameter="22"> </mat-spinner>
-        </div> -->
+        </div>
 
-        <button mat-flat-button color="primary" class="uppercase" type="submit">
+        <button mat-flat-button color="primary" class="uppercase" type="submit" [disabled]="formulario.disabled">
           Salvar
         </button>
 

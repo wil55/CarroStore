@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
-import { Estilo } from '../models/estilo.model';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Produto } from '../models/produto.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EstilosService {
+export class ProdutoService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  async add(estilo: Estilo): Promise<Estilo> {
+  async add(produto: Produto): Promise<Produto> {
 
-    const docRef = await this.firestore.collection<Estilo>('estilos').add(estilo);
+    const docRef = await this.firestore.collection<Produto>('produtos').add(produto);
     const doc = await docRef.get();
 
     return {
       id: doc.id,
       ...doc.data()
-    } as Estilo;
+    } as Produto;
 
   }
-
 }
